@@ -26,13 +26,12 @@
 "Plugins
 
 call plug#begin('~/.local/share/nvim/plugged')
-"Plug 'davidhalter/jedi-vim'
+" Plug 'davidhalter/jedi-vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'junegunn/goyo.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'davidhalter/jedi-vim'
 " Plug 'kassio/neoterm'
 " Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -41,6 +40,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug '/home/martin09/.fzf'
 Plug 'junegunn/fzf.vim'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 filetype plugin indent on
