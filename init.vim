@@ -26,21 +26,22 @@
 "Plugins
 
 call plug#begin('~/.local/share/nvim/plugged')
-"Plug 'davidhalter/jedi-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'junegunn/goyo.vim'
+Plug 'junegunn/goyo.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'davidhalter/jedi-vim'
+" Plug 'ycm-core/YouCompleteMe'
 " Plug 'kassio/neoterm'
-" Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug '/home/martin09/.fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'flazz/vim-colorschemes'
 call plug#end()
 
 filetype plugin indent on
@@ -79,6 +80,16 @@ nnoremap <C-p><C-b> :Buffers <cr>
 nnoremap <C-p><C-g> :GFiles <cr>
 nnoremap <C-p><C-l> :Lines <cr>
 nnoremap <C-p><C-o> :FZF 
+nnoremap <C-p><C-h> :History <cr>
+
+let g:goyo_width=80
+let g:goyo_height=90
+nnoremap <F2> :Goyo<cr>
+nnoremap <F3> :set number! relativenumber!<cr>
+augroup Goyo
+autocmd!
+autocmd VimResized * if exists('#goyo') | exe "normal \<c-w>=" | endif
+augroup END
 
 augroup loadvimrc
 autocmd!
@@ -87,7 +98,7 @@ augroup END
 
 nnoremap <leader>k :call jedi#show_documentation()<cr><C-w>=
 "appearance
-colorscheme elflord
+colorscheme Tomorrow-Night-Eighties
 
 " set directory=.
 
