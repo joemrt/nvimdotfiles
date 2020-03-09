@@ -26,21 +26,17 @@
 "Plugins
 
 call plug#begin('~/.local/share/nvim/plugged')
-" Plug 'davidhalter/jedi-vim'
 Plug 'jiangmiao/auto-pairs'
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'junegunn/goyo.vim'
+Plug 'junegunn/goyo.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Plug 'kassio/neoterm'
-" Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug '/home/martin09/.fzf'
 Plug 'junegunn/fzf.vim'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': 'python'}
 call plug#end()
 
 filetype plugin indent on
@@ -48,11 +44,6 @@ filetype plugin indent on
 "Variables and options
 
 let mapleader=","
-let g:deoplete#enable_at_startup = 1
-let g:jedi#completions_enabled = 0
-let g:jedi#use_splits_not_buffers = "right"
-let g:neoterm_default_mod = 'rightbelow'
-let g:neoterm_autoscroll = 1
 
 set number relativenumber
 set completeopt-=preview
@@ -85,17 +76,7 @@ autocmd!
 autocmd BufWritePost $MYVIMRC :source $MYVIMRC
 augroup END
 
-nnoremap <leader>k :call jedi#show_documentation()<cr><C-w>=
 "appearance
 colorscheme elflord
 
-" set directory=.
 
-
-" Old commands
-"nnoremap <leader>ä :TREPLSendLine<cr>j
-"vnoremap <leader>ä :TREPLSendSelection<cr>
-"vnoremap <leader>Ä :s/\v^\s*$/#/g<cr>:'<,'>TREPLSendSelection<cr>:'<,'>s/\v^#\s*$//g<cr>
-" vnoremap <leader>ä :w !sed -E 's/^\s*$/\#/g' > ~/tmp/.tmuxpipe && send_tmux1<cr><cr>
-" nnoremap <leader>ä :.w !sed -E 's/^\s*$/\#/g' > ~/tmp/.tmuxpipe && send_tmux1<cr><cr>j
-" inoremap <leader>ä <Esc>:.w !sed -E 's/^\s*$/\#/g' > ~/tmp/.tmuxpipe && send_tmux1<cr><cr>li
