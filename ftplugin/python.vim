@@ -29,12 +29,4 @@ nnoremap gä :set operatorfunc=SendTmux<cr>g@
 nnoremap gää :.w !tmux send-keys -t 1 "$(cat)" Enter<cr>j
 vnoremap gä :<C-u>call SendTmux(visualmode())<cr>
 
-
- " Old stuff
-" nnoremap <leader>ä :.w !tmux send-keys -t 1 "$(cat)" Enter<cr>j
-" vnoremap <leader>ä :w !sed -E 's/^\s*$/\#/g' \| tmux send-keys -t 1 "<C-o>" "$(cat)" Enter Enter<cr><cr> 
-" vnoremap <leader>ä :w !sed -E 's/^\s*$/\#/g' \| tmux send-keys -t 1 Escape "O" "$(cat)" Enter Enter<cr><cr> 
-" vnoremap <leader>ä :w !tr -d '\r' \| sed -E 's/^\s*$/\#/g' \| tmux send-keys -t 1 Escape "O" "$(cat)" Enter Enter<cr><cr> 
-
-
-" execute ':silent ''[,'']w !tr -d ''\r'' | sed -E ''s/^\s*$/\#/g''  | tmux send-keys -t 1 Escape "O" "$(cat)" Enter Enter'
+source ~/.config/nvim/scripts/partial_coc.vim
