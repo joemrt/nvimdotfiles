@@ -40,6 +40,7 @@ Plug '/home/martin09/.fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': 'python'}
+Plug 'neomake/neomake'
 call plug#end()
 
 filetype plugin indent on
@@ -74,6 +75,7 @@ nnoremap <C-p><C-g> :GFiles <cr>
 nnoremap <C-p><C-l> :Lines <cr>
 nnoremap <C-p><C-o> :FZF 
 nnoremap <C-p><C-h> :History <cr>
+nnoremap <C-p><space> :CocCommand<cr>
 
 let g:goyo_width=80
 let g:goyo_height=90
@@ -93,3 +95,4 @@ augroup END
 colorscheme Tomorrow-Night-Eighties
 
 
+let g:neomake_logfile = '/tmp/neomake.log'
