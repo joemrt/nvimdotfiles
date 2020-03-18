@@ -1,9 +1,6 @@
 " init.vim file for neovim
 " -------------------------
-"
-" "To install neovim as AppImage: 
-"0.) cd ~/local/
-"1.) curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+" "To install neovim as AppImage: 0.) cd ~/local/ 1.) curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
 "2.) chmod u+x nvim.appimage
 "3.) ln -s nvim.appimage ~/bin/nvim 
 "
@@ -46,7 +43,12 @@ let mapleader=","
 
 set number relativenumber
 set completeopt-=preview
+
 let g:airline_theme='violet'
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+	    let g:airline_symbols = {}
+endif
 
 let g:matchup_override_vimtex=1 
 let g:matchup_matchparen_deferred=1
