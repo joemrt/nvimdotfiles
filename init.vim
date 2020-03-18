@@ -67,8 +67,6 @@ nnoremap <leader>et :vsplit ~/.config/nvim/ftplugin/tex.vim<cr>
 nnoremap <leader>l :set number! relativenumber!<cr>
 tnoremap <Esc> <C-\><C-n>
 nnoremap <leader><space> :noh<cr>
-nnoremap <leader>ö :.!doc_python<cr>
-vnoremap <leader>ö :!doc_python<cr>
 
 nnoremap <C-p><C-p> :FZF -m<cr>
 nnoremap <C-p><C-b> :Buffers <cr>
@@ -90,6 +88,16 @@ augroup END
 augroup loadvimrc
 autocmd!
 autocmd BufWritePost $MYVIMRC :source $MYVIMRC
+augroup END
+
+augroup loadpython
+autocmd!
+autocmd BufWritePost ~/.config/nvim/ftplugin/python.vim :source ~/.config/nvim/ftplugin/python.vim
+augroup END
+
+augroup loadtex
+autocmd!
+autocmd BufWritePost ~/.config/nvim/ftplugin/tex.vim :source ~/.config/nvim/ftplugin/tex.vim
 augroup END
 
 "appearance

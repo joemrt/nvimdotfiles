@@ -31,4 +31,7 @@ nnoremap gä :set operatorfunc=SendTmux<cr>g@
 nnoremap gää :.w !tmux send-keys -t 1 "$(cat)" Enter<cr>j
 vnoremap gä :<C-u>call SendTmux(visualmode())<cr>
 
+nnoremap <leader>ö :.!doc_python<cr>
+vnoremap <leader>ö :!doc_python<cr>
+
 source ~/.config/nvim/scripts/partial_coc.vim
