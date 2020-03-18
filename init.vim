@@ -15,28 +15,23 @@
 
 "Place this file under ~/.config/nvim/init.vim
 
-"--------------------
 
-"Deactivate this if you want to use the local python interpreter
-"If activated pynvim should be installed in the venv (using pip)
-"let g:python3_host_prog = '/home/martin09/anaconda3/envs/neovim/bin/python'
-"let g:python_host_prog = '/home/martin09/anaconda3/envs/neovim/bin/python'
-
-
-"Plugins
 
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/goyo.vim'
-Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips', {'for': 'tex'}
 Plug 'junegunn/goyo.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'lervag/vimtex', {'for': 'tex'}
+Plug 'plasticboy/vim-markdown', {'for': 'md'}
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'andymass/vim-matchup'
 Plug 'tpope/vim-fugitive'
-Plug '/home/martin09/.fzf'
+Plug '/home/martin/.fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': 'python'}
@@ -51,7 +46,11 @@ let mapleader=","
 
 set number relativenumber
 set completeopt-=preview
-let g:airline_theme='murmur'
+let g:airline_theme='violet'
+
+let g:matchup_override_vimtex=1 
+let g:matchup_matchparen_deferred=1
+
 
 "Mappings
 
@@ -63,6 +62,8 @@ nnoremap <M-l> $
 nnoremap <M-k> H
 nnoremap <M-j> L
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>ep :vsplit ~/.config/nvim/ftplugin/python.vim<cr>
+nnoremap <leader>et :vsplit ~/.config/nvim/ftplugin/tex.vim<cr>
 nnoremap <leader>l :set number! relativenumber!<cr>
 tnoremap <Esc> <C-\><C-n>
 nnoremap <leader><space> :noh<cr>
@@ -92,7 +93,6 @@ autocmd BufWritePost $MYVIMRC :source $MYVIMRC
 augroup END
 
 "appearance
-colorscheme Tomorrow-Night-Eighties
 
 
 let g:neomake_logfile = '/tmp/neomake.log'

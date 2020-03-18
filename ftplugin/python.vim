@@ -1,3 +1,5 @@
+" colorscheme Tomorrow-Night-Eighties
+
 function! CheckForjk()
 	if search('jk') !=# 0
 		echom 'jk was found, before using tmux edit ~/.ipython/profile_default/startup/keybindings.py!'
