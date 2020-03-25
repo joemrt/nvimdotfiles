@@ -69,6 +69,7 @@ nnoremap <leader>et :vsplit ~/.config/nvim/ftplugin/tex.vim<cr>
 nnoremap <leader>l :set number! relativenumber!<cr>
 tnoremap <Esc> <C-\><C-n>
 nnoremap <leader><space> :noh<cr>
+nnoremap <leader>, ,
 
 nnoremap <C-p><C-p> :FZF -m<cr>
 nnoremap <C-p><C-b> :Buffers <cr>
@@ -101,8 +102,5 @@ augroup loadtex
 autocmd!
 autocmd BufWritePost ~/.config/nvim/ftplugin/tex.vim :source ~/.config/nvim/ftplugin/tex.vim
 augroup END
-
-"appearance
-
 
 let g:neomake_logfile = '/tmp/neomake.log'
