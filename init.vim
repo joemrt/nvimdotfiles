@@ -28,7 +28,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'andymass/vim-matchup'
 Plug 'tpope/vim-fugitive'
-Plug '/home/martin/.fzf'
+Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': 'python'}
@@ -78,6 +78,11 @@ nnoremap <C-p><C-l> :Lines <cr>
 nnoremap <C-p><C-o> :FZF 
 nnoremap <C-p><C-h> :History <cr>
 nnoremap <C-p><space> :CocCommand<cr>
+
+command! W write
+command! Wq :wq
+
+
 
 let g:goyo_width=80
 let g:goyo_height=90

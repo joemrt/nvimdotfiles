@@ -1,4 +1,4 @@
-" colorscheme Tomorrow-Night-Eighties
+colorscheme Atelier_DuneDark
 
 function! CheckForjk()
 	if search('jk') !=# 0
