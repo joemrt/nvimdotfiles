@@ -17,13 +17,13 @@
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/goyo.vim'
-Plug 'SirVer/ultisnips', {'for': 'tex'}
+" Plug 'SirVer/ultisnips', {'for': 'tex'}
 Plug 'junegunn/goyo.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'lervag/vimtex', {'for': 'tex'}
 Plug 'plasticboy/vim-markdown', {'for': 'md'}
-Plug 'honza/vim-snippets'
+" Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'andymass/vim-matchup'
