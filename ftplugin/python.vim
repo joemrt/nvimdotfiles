@@ -14,7 +14,6 @@ augroup checkforjk
 augroup END
 
 
-"
 function! SendTmux(type)
 	if a:type ==# 'line' 
 		execute ':silent ''[,'']w !tr -d ''\r'' | sed -E ''s/^\s*$/\#/g''  | tmux send-keys -t 1 Escape  "O" Escape  "i" "$(cat)" Enter Enter'
@@ -35,3 +34,10 @@ nnoremap <leader>ö :.!doc_python<cr>
 vnoremap <leader>ö :!doc_python<cr>
 
 source ~/.config/nvim/scripts/partial_coc.vim
+
+"Save and load folds
+augroup pythonfolds
+	autocmd!
+	autocmd BufWinLeave *.py mkview
+	autocmd BufWinEnter *.py silent! loadview
+augroup END
