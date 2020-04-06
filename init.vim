@@ -34,6 +34,8 @@ Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': 'python'}
+Plug 'ap/vim-css-color', {'for' : 'python'}
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 filetype plugin indent on
@@ -72,6 +74,14 @@ nnoremap <C-p><C-l> :Lines <cr>
 nnoremap <C-p><C-o> :FZF 
 nnoremap <C-p><C-h> :History <cr>
 nnoremap <C-p><space> :CocCommand<cr>
+
+" vimWiki
+" overwrite custom vimwiki mapping
+" set leader key to nonsense
+let g:vimwiki_map_prefix = '<F13>'
+" custom mappings
+nnoremap <leader>ew :vsplit \| VimwikiIndex<cr>
+
 
 "Added to avoid confusion between Windows(fzf) and writing
 command! W write
