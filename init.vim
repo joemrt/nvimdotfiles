@@ -18,7 +18,7 @@
 "Place this file under ~/.config/nvim/init.vim
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-call plug#begin('~/.local/share/nvim/plugged')
+silent! call plug#begin('~/.local/share/nvim/plugged')
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/goyo.vim'

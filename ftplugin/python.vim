@@ -23,12 +23,15 @@ function! SendTmux(type)
 		execute ':silent ''<,''>w !tr -d ''\r'' | sed -E ''s/^\s*$/\#/g''  | tmux send-keys -t 1 Escape "O" Escape  "i" "$(cat)" Enter Enter ' 
 	elseif a:type ==# 'v'
 		execute ":silent \'<,\'>w !tmux send-keys -t 1 \"$(cat)\" Enter"
+	elseif a:type ==# 'full'
+		execute ':silent w !tr -d ''\r'' | sed -E ''s/^\s*$/\#/g''  | tmux send-keys -t 1 Escape  "O" Escape  "i" "$(cat)" Enter Enter'
 	endif
 endfunction
 
 nnoremap gä :set operatorfunc=SendTmux<cr>g@
 nnoremap gää :.w !tmux send-keys -t 1 "$(cat)" Enter<cr>j
 vnoremap gä :<C-u>call SendTmux(visualmode())<cr>
+nnoremap gÄ :<C-u>call SendTmux('full')<cr>
 
 nnoremap <leader>ö :.!doc_python<cr>
 vnoremap <leader>ö :!doc_python<cr>
