@@ -59,13 +59,13 @@ nnoremap <M-h> 0
 nnoremap <M-l> $
 nnoremap <M-k> H
 nnoremap <M-j> L
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>ep :vsplit ~/.config/nvim/ftplugin/python.vim<cr>
-nnoremap <leader>et :vsplit ~/.config/nvim/ftplugin/tex.vim<cr>
-nnoremap <leader>l :set number! relativenumber!<cr>
+nnoremap <silent> <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <silent> <leader>ep :vsplit ~/.config/nvim/ftplugin/python.vim<cr>
+nnoremap <silent> <leader>et :vsplit ~/.config/nvim/ftplugin/tex.vim<cr>
+nnoremap <silent> <leader>l :set number! relativenumber!<cr>
 tnoremap <Esc> <C-\><C-n>
-nnoremap <leader><space> :noh<cr>
-nnoremap <leader>, ,
+nnoremap <silent> <leader><space> :noh<cr>
+nnoremap <silent> <leader>, ,
 
 nnoremap <C-p><C-p> :FZF -m<cr>
 nnoremap <C-p><C-b> :Buffers <cr>
@@ -90,7 +90,7 @@ command! Wq :wq
 let g:goyo_width=80
 let g:goyo_height=90
 nnoremap <F2> :Goyo<cr>
-nnoremap <F3> :set number! relativenumber!<cr>
+nnoremap <silent> <F3> :set number! relativenumber!<cr>
 
 augroup Goyo
 	autocmd!

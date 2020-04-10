@@ -11,23 +11,21 @@ let g:vimtex_fold_enabled=0
 nnoremap <C-Space> /<cr>:noh<cr>c4l
 inoremap <C-Space> <Esc>/<++><cr>:noh<cr>c4l
 
-function! LoadTexFile()
-	"incomplete still
-	"check if file exists somewhere (or vairable empty)
-	"scroll if there is a name under the curor
-	"make it a vim internal function
-	"determine bib file
+function! LoadBibFile()
+	"TODO: check if file exists somewhere (or vairable empty)
 	let l:currentword = expand('<cword>')
-	let l:bibfile = system('sed -nE "0,/^\\\\bibliography\{(\w*)\}/ s/^\\\\bibliography\{(\w*)\}/\1.bib/p" '.expand('%'))
-	"open file
-	echom "looking for " . l:currentword
-	execute 'vsplit ' . l:bibfile
-	"look for word
-	execute 'silent! normal gg/' . l:currentword . "\<cr>"
-	nohlsearch
+	let l:bibfile = system('sed -nE "0,/^\\\\bibliography\{(\w*)\}/ s/^\\\\bibliography\{(\w*)\}/\1.bib/p" ', bufnr('%'))
+	if l:bibfile !=# ''
+		execute 'vsplit ' . l:bibfile
+		"look for word
+		execute 'silent! normal gg/' . l:currentword . "\<cr>"
+		nohlsearch
+	else
+		echom "No bibliography detected!"
+	endif
 endfunction
 
-nnoremap <leader>eb :call LoadTexFile()<cr>
+nnoremap <silent> <leader>eb :call LoadBibFile()<cr>
 
 "load snippets
 source ~/.config/nvim/snippets/latex_snippets.vim
