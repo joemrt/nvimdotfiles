@@ -11,7 +11,7 @@ let g:vimtex_fold_enabled=0
 nnoremap <C-Space> /<cr>:noh<cr>c4l
 inoremap <C-Space> <Esc>/<++><cr>:noh<cr>c4l
 
-function! LoadBibFile()
+function! s:LoadBibFile()
 	"TODO: check if file exists somewhere (or vairable empty)
 	let l:currentword = expand('<cword>')
 	let l:bibfile = system('sed -nE "0,/^\\\\bibliography\{(\w*)\}/ s/^\\\\bibliography\{(\w*)\}/\1.bib/p" ', bufnr('%'))
@@ -25,7 +25,7 @@ function! LoadBibFile()
 	endif
 endfunction
 
-nnoremap <silent> <leader>eb :call LoadBibFile()<cr>
+nnoremap <silent> <leader>eb :call <SID>LoadBibFile()<cr>
 
 "load snippets
 source ~/.config/nvim/snippets/latex_snippets.vim

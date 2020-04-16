@@ -14,7 +14,7 @@ augroup checkforjk
 augroup END
 
 
-function! SendTmux(type)
+function! s:SendTmux(type)
 	if a:type ==# 'line' 
 		execute ':silent ''[,'']w !tr -d ''\r'' | sed -E ''s/^\s*$/\#/g''  | tmux send-keys -t 1 Escape  "O" Escape  "i" "$(cat)" Enter Enter'
 	elseif a:type ==# 'char'
@@ -28,13 +28,13 @@ function! SendTmux(type)
 	endif
 endfunction
 
-nnoremap gä :set operatorfunc=SendTmux<cr>g@
-nnoremap gää :.w !tmux send-keys -t 1 "$(cat)" Enter<cr>j
-vnoremap gä :<C-u>call SendTmux(visualmode())<cr>
-nnoremap gÄ :<C-u>call SendTmux('full')<cr>
+nnoremap <silent> gä :set operatorfunc=<SID>SendTmux<cr>g@
+nnoremap <silent> gää :.w !tmux send-keys -t 1 "$(cat)" Enter<cr>j
+vnoremap <silent> gä :<C-u>call <SID>SendTmux(visualmode())<cr>
+nnoremap <silent> gÄ :<C-u>call <SID>SendTmux('full')<cr>
 
-nnoremap <leader>ö :.!doc_python<cr>
-vnoremap <leader>ö :!doc_python<cr>
+nnoremap <silent> <leader>ö :.!doc_python<cr>
+vnoremap <silent> <leader>ö :!doc_python<cr>
 
 source ~/.config/nvim/scripts/partial_coc.vim
 
