@@ -55,14 +55,10 @@ let g:matchup_matchparen_deferred=1
 
 "Mappings
 inoremap jk <Esc>l
-nnoremap <M-h> 0
-nnoremap <M-l> $
-nnoremap <M-k> H
-nnoremap <M-j> L
-vnoremap <M-h> 0
-vnoremap <M-l> $
-vnoremap <M-k> H
-vnoremap <M-j> L
+noremap <M-h> 0
+noremap <M-l> $
+noremap <M-k> H
+noremap <M-j> L
 nnoremap <silent> <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <silent> <leader>ep :vsplit ~/.config/nvim/ftplugin/python.vim<cr>
 nnoremap <silent> <leader>et :vsplit ~/.config/nvim/ftplugin/tex.vim<cr>
