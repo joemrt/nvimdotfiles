@@ -59,6 +59,10 @@ nnoremap <M-h> 0
 nnoremap <M-l> $
 nnoremap <M-k> H
 nnoremap <M-j> L
+vnoremap <M-h> 0
+vnoremap <M-l> $
+vnoremap <M-k> H
+vnoremap <M-j> L
 nnoremap <silent> <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <silent> <leader>ep :vsplit ~/.config/nvim/ftplugin/python.vim<cr>
 nnoremap <silent> <leader>et :vsplit ~/.config/nvim/ftplugin/tex.vim<cr>
@@ -66,6 +70,8 @@ nnoremap <silent> <leader>l :set number! relativenumber!<cr>
 tnoremap <Esc> <C-\><C-n>
 nnoremap <silent> <leader><space> :noh<cr>
 nnoremap <silent> <leader>, ,
+noremap <silent> ]b :call searchpair('\[','','\]')<cr>
+noremap <silent> [b :call searchpair('\[','','\]','b')<cr>
 
 nnoremap <C-p><C-p> :FZF -m<cr>
 nnoremap <C-p><C-b> :Buffers <cr>
