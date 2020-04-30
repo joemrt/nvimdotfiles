@@ -13,6 +13,10 @@ inoremap <leader>bibliography \bibliography{}<cr>
 inoremap <leader>label \label{}<++><esc>F}i
 inoremap <leader>ref \ref{}<++><esc>F}i
 
+" citing
+""""""""""""""
+inoremap <leader>cite \cite{}<++><esc>F}i
+
 "math
 """"""""
 
@@ -33,7 +37,7 @@ inoremap <leader>figure \begin{figure}[t]<cr>
 			\<++><esc>4k$F{a
 "} (for syntax)
 
-inoremap <leader>wrapfigure \begin{wrapfigure}{l}{0.5\texwidth}<cr>
+inoremap <leader>wrapfigure \begin{wrapfigure}{l}{0.5\textwidth}<cr>
 			\\includegraphics[width=0.48\textwidth]{}<cr>
 			\\caption{<++>}<cr>
 			\\label{<++>}<cr>
