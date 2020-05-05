@@ -36,6 +36,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': 'python'}
 Plug 'ap/vim-css-color', {'for' : 'python'}
 Plug 'vimwiki/vimwiki'
+Plug 'tpope/vim-vinegar'
 call plug#end()
 
 filetype plugin indent on
@@ -59,6 +60,8 @@ noremap <M-h> 0
 noremap <M-l> $
 noremap <M-k> H
 noremap <M-j> L
+nnoremap <silent> <leader>ef :Lex!<cr>
+nnoremap <silent> <leader>eF :Vex<cr>
 nnoremap <silent> <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <silent> <leader>ep :vsplit ~/.config/nvim/ftplugin/python.vim<cr>
 nnoremap <silent> <leader>et :vsplit ~/.config/nvim/ftplugin/tex.vim<cr>
