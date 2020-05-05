@@ -1,8 +1,6 @@
 " LaTeX configuration
 " In order for everything to work you need to install mupdf and (for synchronization) xdotools
 
-colorscheme Atelier_LakesideDark
-
 normal zR
 set foldmethod=manual
 let g:vimtex_view_method = 'mupdf'

@@ -116,3 +116,11 @@ augroup loadtex
 	autocmd!
 	autocmd BufWritePost ~/.config/nvim/ftplugin/tex.vim :source ~/.config/nvim/ftplugin/tex.vim
 augroup END
+
+" put localsettings
+" like colorschemes in this file
+let localsettingsfile = expand('~/.config/nvim/scripts/localsettings.vim')
+if filereadable(localsettingsfile)
+	execute " source " . localsettingsfile
+endif
+
