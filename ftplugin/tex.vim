@@ -12,5 +12,13 @@ inoremap <C-Space> <Esc>/<++><cr>:noh<cr>c4l
 source ~/.config/nvim/scripts/texloadbib.vim
 nnoremap <silent> <leader>eb :call LoadBibFile()<cr>
 
+
+"Save and load folds
+augroup texfolds
+	autocmd!
+	autocmd BufWinLeave *.tex mkview
+	autocmd BufWinEnter *.tex silent! loadview
+augroup END
+
 "load snippets
 source ~/.config/nvim/snippets/latex_snippets.vim
