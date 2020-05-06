@@ -1,5 +1,3 @@
-colorscheme Atelier_DuneDark
-
 " execute via tmux
 source ~/.config/nvim/scripts/pythonsendtmux.vim
 
