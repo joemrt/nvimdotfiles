@@ -60,6 +60,8 @@ noremap <M-h> 0
 noremap <M-l> $
 noremap <M-k> H
 noremap <M-j> L
+nnoremap <C-j> gj
+nnoremap <C-k> gk
 nnoremap <silent> <leader>ef :Lex!<cr>
 nnoremap <silent> <leader>eF :Vex<cr>
 nnoremap <silent> <leader>ev :vsplit $MYVIMRC<cr>

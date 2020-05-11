@@ -25,6 +25,7 @@ inoremap <leader>align* \begin{align*}<cr><cr>\end{align*}<esc>kI
 inoremap <leader>align \begin{align}<cr><cr>\end{align}<esc>kI
 "{ 
 inoremap <leader>frac \frac{}{<++>}<++><esc>2F}i
+inoremap <leader>< \langle\rangle<++><esc>2Fea
 
 "figures
 """"""""""""
@@ -78,6 +79,10 @@ inoremap <leader>itemize \begin{itemize}<cr>
 """"""""""""""""
 inoremap <leader>emph \emph{}<++><esc>F}i
 inoremap <leader>textbf \textbf{}<++><esc>F}i
+
+"quoting
+""""""""""
+inoremap <leader>" ``''<++><esc>F`a
 
 
 "load in files
