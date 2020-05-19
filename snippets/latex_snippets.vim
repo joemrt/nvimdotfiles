@@ -87,4 +87,5 @@ inoremap <leader>" ``''<++><esc>F`a
 
 "load in files
 """""""""""""""
-nnoremap <leader>tex dd:r ~/.config/nvim/snippets/pure_latex_template.tex<cr>kdd_ nnoremap <leader>mex dd:r ~/.config/nvim/snippets/math_latex_template.tex<cr>kdd_
+inoremap <leader>tex <esc>dd:r ~/.config/nvim/snippets/pure_latex_template.tex<cr>kdd_9jzzo
+inoremap <leader>mex <esc>dd:r ~/.config/nvim/snippets/math_latex_template.tex<cr>kdd_21jzzo

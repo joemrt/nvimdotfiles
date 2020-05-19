@@ -109,14 +109,9 @@ augroup loadvimrc
 	autocmd BufWritePost $MYVIMRC :source $MYVIMRC
 augroup END
 
-augroup loadpython
+augroup loadscripts
 	autocmd!
-	autocmd BufWritePost ~/.config/nvim/ftplugin/python.vim :source ~/.config/nvim/ftplugin/python.vim
-augroup END
-
-augroup loadtex
-	autocmd!
-	autocmd BufWritePost ~/.config/nvim/ftplugin/tex.vim :source ~/.config/nvim/ftplugin/tex.vim
+	autocmd BufWritePost ~/.config/nvim/*/*.vim :source %
 augroup END
 
 " put localsettings
