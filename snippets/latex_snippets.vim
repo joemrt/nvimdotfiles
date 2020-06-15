@@ -84,6 +84,24 @@ inoremap <leader>textbf \textbf{}<++><esc>F}i
 """"""""""
 inoremap <leader>" ``''<++><esc>F`a
 
+"newcommands
+inoremap <leader>newcommand \newcommand{}{<++>}<++><esc>2F}i
+
+function! NewCommand()
+	" read in name of command
+	let command = input('newcommand: ')
+	" insert at current position
+	execute "normal! a" . command
+	" remember position
+	normal! m'
+	" jump to newcommand definitions
+	?^\s*\\newcommand
+	" enter newcommand
+	execute "normal! o\\newcommand{" . command . "}{}"
+endfunction
+
+inoremap <leader>nco <esc>:call NewCommand() \| execute "startinsert"<cr>
+
 
 "load in files
 """""""""""""""
