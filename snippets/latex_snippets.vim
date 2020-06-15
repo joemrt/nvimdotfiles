@@ -100,7 +100,7 @@ function! NewCommand()
 	execute "normal! o\\newcommand{" . command . "}{}"
 endfunction
 
-inoremap <leader>nco <esc>:call NewCommand() \| execute "startinsert"<cr>
+inoremap <leader>nco <esc>:call NewCommand() \| startinsert<cr>
 
 
 "load in files
