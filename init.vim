@@ -62,8 +62,8 @@ noremap <M-k> H
 noremap <M-j> L
 nnoremap <C-j> gj
 nnoremap <C-k> gk
-nnoremap <silent> <leader>ef :Lex!<cr>
-nnoremap <silent> <leader>eF :Vex<cr>
+nnoremap <silent> <leader>eF :Lex!<cr>
+nnoremap <silent> <leader>ef :Vex<cr>
 nnoremap <silent> <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <silent> <leader>ep :vsplit ~/.config/nvim/ftplugin/python.vim<cr>
 nnoremap <silent> <leader>et :vsplit ~/.config/nvim/ftplugin/tex.vim<cr>
@@ -121,3 +121,4 @@ if filereadable(localsettingsfile)
 	execute " source " . localsettingsfile
 endif
 
+let g:tex_flavor = "latex"
