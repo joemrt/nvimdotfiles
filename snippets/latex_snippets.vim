@@ -13,6 +13,36 @@ inoremap <leader>bibliography \bibliography{}<cr>
 inoremap <leader>label \label{}<++><esc>F}i
 inoremap <leader>ref \ref{}<++><esc>F}i
 
+function! s:NewAlignLabel()
+	" read in name of equation label
+	let label = input('label: ')
+	" insert at current position
+	execute "normal! a\\eqref{eq:" . label . "}"
+	" remember position
+	normal! m'
+	" jump to last align environment
+	?^\s*\\begin{align
+	" Check is starred and if so toggle 
+	" using vimtex
+	if getline('.')=~#"\*}$"
+		execute "normal \<Plug>(vimtex-env-toggle-star)"
+	end
+	" enter newcommand
+	execute "normal! o\\label{eq:" . label . "}"
+	" jump back
+	normal! ``
+	" append
+	if col('.') ==# col('$')-1
+		" if at end of line, take 'A'
+		startinsert!
+	else
+		" else move to right and take 'i'
+		normal! l
+		startinsert
+	end
+endfunction
+
+inoremap <leader>neq <esc>:call <SID>NewAlignLabel()<cr>
 " citing
 """"""""""""""
 inoremap <leader>cite \cite{}<++><esc>F}i
@@ -87,7 +117,7 @@ inoremap <leader>" ``''<++><esc>F`a
 "newcommands
 inoremap <leader>newcommand \newcommand{}{<++>}<++><esc>2F}i
 
-function! NewCommand()
+function! s:NewCommand()
 	" read in name of command
 	let command = input('newcommand: ')
 	" insert at current position
@@ -100,7 +130,7 @@ function! NewCommand()
 	execute "normal! o\\newcommand{" . command . "}{}"
 endfunction
 
-inoremap <leader>nco <esc>:call NewCommand() \| startinsert<cr>
+inoremap <leader>nco <esc>:call <SID>NewCommand() \| startinsert<cr>
 
 
 "load in files
