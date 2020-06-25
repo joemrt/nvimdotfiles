@@ -6,6 +6,7 @@ inoremap <leader>mk \mk{}<++><esc>F{a
 inoremap <leader>section \section{}<cr><++><esc>k0f{a
 
 inoremap <leader>subsection \subsection{}<cr><++><esc>k0f{a
+inoremap <leader>subsubsection \subsubsection{}<cr><++><esc>k0f{a
 inoremap <leader>title \title{}<cr><++><esc>k0f{a
 inoremap <leader>bibliography \bibliography{}<cr>
 			\\bibliographystyle{ieeetr}<esc>kF{a
@@ -24,8 +25,12 @@ function! s:NewAlignLabel()
 	?^\s*\\begin{align
 	" Check is starred and if so toggle 
 	" using vimtex
-	if getline('.')=~#"\*}$"
-		execute "normal \<Plug>(vimtex-env-toggle-star)"
+	if getline('.') =~# "\*}$"
+		if exists('*vimtex#env#toggle_star()')
+			call vimtex#env#toggle_star()
+		else
+			echom 'Could not toggle align'
+		end
 	end
 	" enter newcommand
 	execute "normal! o\\label{eq:" . label . "}"
@@ -42,7 +47,37 @@ function! s:NewAlignLabel()
 	end
 endfunction
 
+
 inoremap <leader>neq <esc>:call <SID>NewAlignLabel()<cr>
+
+function! s:LabelSection()
+	" store cursor position
+	let save_pos = getpos(".")	
+	" Capture current line
+	let line_string = getline('.')
+	" Extract section type and section title
+	let pattern = '^\s*\\\([^{]*sec\)tion{\([^}]*\)}\s*$'
+	let section_type = substitute(line_string,pattern,'\1','')
+	let section_title = substitute(getline('.'),pattern,'\2','')	
+	" Check whether substitution happened
+	" if not abort
+	if (section_type ==# line_string) || (section_title ==# line_string)
+		echom "Could not resolve section"
+		return
+	end
+	" Format section_title
+	let section_title = substitute(section_title, '\s\+','_','g')
+	let section_title = substitute(section_title, '\c[^a-z_]','','g')
+	let section_title = substitute(section_title,'_\{2,\}','_','g')
+	let section_title = substitute(section_title,'^\(.*\)$','\L\1','')
+	" append label
+	execute 'normal! o\label{' . section_type . ":" . section_title . '}'
+	" restore position
+	call setpos('.', save_pos)
+endfunction
+
+nnoremap <silent> <leader>ö :call <SID>LabelSection()<cr>
+
 " citing
 """"""""""""""
 inoremap <leader>cite \cite{}<++><esc>F}i
