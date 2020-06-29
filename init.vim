@@ -33,6 +33,7 @@ Plug 'tpope/vim-fugitive'
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'flazz/vim-colorschemes'
+Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': 'python'}
 Plug 'ap/vim-css-color', {'for' : 'python'}
 Plug 'vimwiki/vimwiki'
