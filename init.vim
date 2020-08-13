@@ -69,7 +69,6 @@ nnoremap <silent> <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <silent> <leader>ep :vsplit ~/.config/nvim/ftplugin/python.vim<cr>
 nnoremap <silent> <leader>et :vsplit ~/.config/nvim/ftplugin/tex.vim<cr>
 nnoremap <silent> <leader>l :set number! relativenumber!<cr>
-tnoremap <Esc> <C-\><C-n>
 nnoremap <silent> <leader><space> :noh<cr>
 nnoremap <silent> <leader>, ,
 noremap <silent> ]b :call searchpair('\[','','\]')<cr>
@@ -82,6 +81,13 @@ nnoremap <C-p><C-l> :Lines <cr>
 nnoremap <C-p><C-o> :FZF 
 nnoremap <C-p><C-h> :History <cr>
 nnoremap <C-p><space> :CocCommand<cr>
+
+"Terminal settings
+tnoremap <Esc> <C-\><C-n>
+augroup TerminalSettings
+	autocmd!
+	autocmd TermOpen * setlocal nonumber norelativenumber
+augroup END
 
 " vimWiki
 " overwrite custom vimwiki mapping
