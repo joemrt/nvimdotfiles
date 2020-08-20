@@ -128,4 +128,8 @@ if filereadable(localsettingsfile)
 	execute " source " . localsettingsfile
 endif
 
+function! DeleteSwap()
+	call system('rm ' . $HOME . '/.local/share/nvim/swap/*' . expand('%:t') . '*')
+endfunction
+
 let g:tex_flavor = "latex"
