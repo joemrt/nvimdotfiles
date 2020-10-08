@@ -152,6 +152,14 @@ inoremap <leader>" ``''<++><esc>F`a
 "newcommands
 inoremap <leader>newcommand \newcommand{}{<++>}<++><esc>2F}i
 
+" tabular
+""""""""""
+inoremap <leader>tabular \begin{tabular}{l\|ll}<cr>
+			\<++> & <++> & <++> \\<cr>
+			\\hline<cr>
+			\<++>  & <++> & <++> <cr>
+			\\end{tabular}<esc>4kA
+
 function! s:NewCommand()
 	" read in name of command
 	let command = input('newcommand: ')
