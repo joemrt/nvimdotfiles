@@ -1,8 +1,11 @@
 " execute via tmux
+if exists('g:python_tmux_window')==#0
+	let g:python_tmux_window=1
+endif
 source ~/.config/nvim/scripts/pythonsendtmux.vim
 
 nnoremap <silent> gä :set operatorfunc=SendTmux<cr>g@
-nnoremap <silent> gää :.w !tmux send-keys -t 1 i C-c "$(cat)" Enter<cr>j
+nnoremap <silent> gää :execute('silent! .w !tmux send-keys -t ' . string(g:python_tmux_window) .  ' i C-c "$(cat)" Enter')<cr>j
 vnoremap <silent> gä :<C-u>call SendTmux(visualmode())<cr>
 nnoremap <silent> gÄ :<C-u>call SendTmux('full')<cr>
 

@@ -11,15 +11,15 @@ endfunction
 function! SendTmux(type)
 	" send to tmux window 1
 	if a:type ==# 'line' 
-		execute ':silent ''[,'']w !tr -d ''\r'' | sed -E ''s/^\s*$/\#/g''  | tmux send-keys -t 1 i C-c Escape  "O" Escape  "i" "$(cat)" Enter Enter'
+		execute ':silent ''[,'']w !tr -d ''\r'' | sed -E ''s/^\s*$/\#/g''  | tmux send-keys -t ' . string(g:python_tmux_window) . ' i C-c Escape  "O" Escape  "i" "$(cat)" Enter Enter'
 	elseif a:type ==# 'char'
-		execute ":silent .w !tmux send-keys -t 1 i C-c \"$(cat)\" Enter"
+		execute ":silent .w !tmux send-keys -t " . string(g:python_tmux_window) . " i C-c \"$(cat)\" Enter"
 	elseif a:type ==# 'V'
-		execute ':silent ''<,''>w !tr -d ''\r'' | sed -E ''s/^\s*$/\#/g''  | tmux send-keys -t 1 i C-c Escape "O" Escape  "i" "$(cat)" Enter Enter ' 
+		execute ':silent ''<,''>w !tr -d ''\r'' | sed -E ''s/^\s*$/\#/g''  | tmux send-keys -t ' . string(g:python_tmux_window) . ' i C-c Escape "O" Escape  "i" "$(cat)" Enter Enter ' 
 	elseif a:type ==# 'v'
-		execute ":silent \'<,\'>w !tmux send-keys -t 1 i C-c \"$(cat)\" Enter"
+		execute ":silent \'<,\'>w !tmux send-keys -t " . string(g:python_tmux_window) . " i C-c \"$(cat)\" Enter"
 	elseif a:type ==# 'full'
-		execute ':silent w !tr -d ''\r'' | sed -E ''s/^\s*$/\#/g''  | tmux send-keys -t 1 C-c Escape  "O" Escape  "i" "$(cat)" Enter Enter'
+		execute ':silent w !tr -d ''\r'' | sed -E ''s/^\s*$/\#/g''  | tmux send-keys -t ' . string(g:python_tmux_window) . ' C-c Escape  "O" Escape  "i" "$(cat)" Enter Enter'
 	endif
 endfunction
 
