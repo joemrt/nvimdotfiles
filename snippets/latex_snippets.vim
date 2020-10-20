@@ -131,6 +131,13 @@ inoremap <leader>subfigure \begin{figure}[t]
 			\\end{figure}<cr><++><esc>14k$F{a
 "} (for syntax)
 
+"minipage
+"""""""""""
+inoremap <leader>minipage \begin{minipage}{0.49\textwidth}<cr>
+			  \<cr>
+			  \% e.g. \captionof{figure}{caption text...}<cr>
+			  \\end{minipage}<cr><++><esc>3k0S
+
 
 "lists
 """"""""""""
