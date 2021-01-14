@@ -187,3 +187,4 @@ inoremap <leader>nco <esc>:call <SID>NewCommand() \| startinsert<cr>
 """""""""""""""
 inoremap <leader>tex <esc>dd:r ~/.config/nvim/snippets/pure_latex_template.tex<cr>kdd_9jzzo
 inoremap <leader>mex <esc>dd:r ~/.config/nvim/snippets/math_latex_template.tex<cr>kdd_21jzzo
+inoremap <leader>beamer <esc>dd:r ~/.config/nvim/snippets/beamer_latex_template.tex<cr>kdd_27jzzo
