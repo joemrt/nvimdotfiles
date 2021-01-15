@@ -32,7 +32,7 @@ function! GetDocString()
 	endfor
 	" process arguments to form :param: list
 	let doc = join(list_of_value_of_braces,"\n")
-	let doc = system('sed -E "s/=\s*\w*\s*//g"', doc)
+	let doc = system('sed -E "s/=\s*(\w|\.)*\s*//g"', doc)
 	let doc = system('sed -E "s/\s*//g"', doc)
 	let doc = system('sed -E "s/(\w*)/' . intendation .  ':param \1:/"', doc)
 	if strlen(doc) !=# 0
