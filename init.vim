@@ -21,7 +21,6 @@
 silent! call plug#begin('~/.local/share/nvim/plugged')
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/goyo.vim'
-Plug 'junegunn/goyo.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'lervag/vimtex', {'for': 'tex'}
@@ -36,7 +35,6 @@ Plug 'flazz/vim-colorschemes'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': 'python'}
 Plug 'ap/vim-css-color', {'for' : 'python'}
-Plug 'vimwiki/vimwiki'
 Plug 'tpope/vim-vinegar'
 call plug#end()
 
@@ -63,9 +61,8 @@ noremap <M-k> H
 noremap <M-j> L
 noremap <C-j> gj
 noremap <C-k> gk
-nnoremap <silent> <leader>eF :Lex!<cr>
-nnoremap <silent> <leader>ef :Vex<cr>
 nnoremap <silent> <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <silent> <leader>er :vsplit ~/.config/nvim/README.md<cr>
 nnoremap <silent> <leader>ep :vsplit ~/.config/nvim/ftplugin/python.vim<cr>
 nnoremap <silent> <leader>et :vsplit ~/.config/nvim/ftplugin/tex.vim<cr>
 nnoremap <silent> <leader>l :set number! relativenumber!<cr>
@@ -77,10 +74,7 @@ noremap <silent> [b :call searchpair('\[','','\]','b')<cr>
 nnoremap <C-p><C-p> :FZF -m<cr>
 nnoremap <C-p><C-b> :Buffers <cr>
 nnoremap <C-p><C-g> :GFiles <cr>
-nnoremap <C-p><C-l> :Lines <cr>
 nnoremap <C-p><C-o> :FZF 
-nnoremap <C-p><C-h> :History <cr>
-nnoremap <C-p><space> :CocCommand<cr>
 
 "Terminal settings
 tnoremap <Esc> <C-\><C-n>
@@ -88,13 +82,6 @@ augroup TerminalSettings
 	autocmd!
 	autocmd TermOpen * setlocal nonumber norelativenumber
 augroup END
-
-" vimWiki
-" overwrite custom vimwiki mapping
-" set leader key to nonsense
-let g:vimwiki_map_prefix = '<F13>'
-" custom mappings
-nnoremap <leader>ew :vsplit \| VimwikiIndex<cr>
 
 
 "Added to avoid confusion between Windows(fzf) and writing
