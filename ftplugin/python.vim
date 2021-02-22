@@ -4,6 +4,8 @@ if exists('g:python_tmux_window')==#0
 endif
 source ~/.config/nvim/scripts/pythonsendtmux.vim
 
+set colorcolumn=80
+
 nnoremap <silent> gä :set operatorfunc=SendTmux<cr>g@
 nnoremap <silent> gää :execute('silent! .w !tmux send-keys -t ' . string(g:python_tmux_window) .  ' i C-c "$(cat)" Enter')<cr>j
 vnoremap <silent> gä :<C-u>call SendTmux(visualmode())<cr>
