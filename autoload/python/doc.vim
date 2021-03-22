@@ -1,7 +1,7 @@
 let s:maximial_trial_of_brace_resolval = 20
 let s:arguments_to_ignore = ["self"]
 
-function! GetDocString()
+function! python#doc#GetDocString()
 	" Print a docstring below python function
 	" Returns 1 if failed and 0 if succeded
 	let currentpos = getpos('.')

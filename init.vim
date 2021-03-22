@@ -61,6 +61,8 @@ noremap <M-k> H
 noremap <M-j> L
 noremap <C-j> gj
 noremap <C-k> gk
+nnoremap <silent> ]q :cnext<cr>
+nnoremap <silent> [q :cprev<cr>
 nnoremap <silent> <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <silent> <leader>er :vsplit ~/.config/nvim/README.md<cr>
 nnoremap <silent> <leader>ep :vsplit ~/.config/nvim/ftplugin/python.vim<cr>
