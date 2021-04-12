@@ -4,6 +4,14 @@ if exists('g:python_tmux_window')==#0
 endif
 source ~/.config/nvim/scripts/pythonsendtmux.vim
 
+" function to popule quickfix window
+function! PyPopulateQuickfixWindow()
+	let l:path_to_script = expand('~') . '/.config/nvim/scripts/ipdbquickfix.sh'
+	cexpr systemlist(l:path_to_script . ' ' . g:python_tmux_window)
+endfunction
+
+command! PyPop call PyPopulateQuickfixWindow()
+
 set colorcolumn=80
 
 nnoremap <silent> gä :set operatorfunc=SendTmux<cr>g@
@@ -15,7 +23,6 @@ augroup checkforjk
 	autocmd!
 	autocmd BufEnter *.py :call CheckForjk()
 augroup END
-
 
 " print document string
 source ~/.config/nvim/scripts/pythondoc.vim
