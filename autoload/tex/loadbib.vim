@@ -1,4 +1,4 @@
-function! LoadBibFile()
+function! tex#loadbib#LoadBibFile()
 	"Loads BibTex
 	"and looks for word under the cursor
 	let l:currentword = expand('<cword>')

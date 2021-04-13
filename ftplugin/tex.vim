@@ -10,8 +10,7 @@ nnoremap <C-Space> /<++><cr>:noh<cr>c4l
 inoremap <C-Space> <Esc>/<++><cr>:noh<cr>c4l
 nnoremap <silent> <F6> :setlocal spell! spelllang=en_us<cr>
 
-source ~/.config/nvim/scripts/texloadbib.vim
-nnoremap <silent> <leader>eb :call LoadBibFile()<cr>
+nnoremap <silent> <leader>eb :call tex#loadbib#LoadBibFile()<cr>
 
 
 "Save and load folds
