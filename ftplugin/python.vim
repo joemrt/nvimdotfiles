@@ -13,10 +13,17 @@ nnoremap <silent> ]e :python#debugging#PyNextError()<cr>
 
 set colorcolumn=80
 
+
 nnoremap <silent> gä :set operatorfunc=python#sendtmux#SendTmux<cr>g@
 nnoremap <silent> gää :execute('silent! .w !tmux send-keys -t ' . string(g:python_tmux_window) .  ' i C-c "$(cat)" Enter')<cr>j
 vnoremap <silent> gä :<C-u>call python#sendtmux#SendTmux(visualmode())<cr>
 nnoremap <silent> gÄ :<C-u>call python#sendtmux#SendTmux('full')<cr>
+
+" load boa module in lua
+lua package.loaded.boa = nil
+lua boa=require('boa')
+command! PyReloadModules lua boa.SendReloadToTmux()
+
 
 augroup checkforjk
 	autocmd!
