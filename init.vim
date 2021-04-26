@@ -36,6 +36,7 @@ Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': 'python'}
 Plug 'ap/vim-css-color', {'for' : 'python'}
 Plug 'tpope/vim-vinegar'
+Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 
 filetype plugin indent on
@@ -73,10 +74,12 @@ nnoremap <silent> <leader>, ,
 noremap <silent> ]b :call searchpair('\[','','\]')<cr>
 noremap <silent> [b :call searchpair('\[','','\]','b')<cr>
 
-nnoremap <C-p><C-p> :FZF -m<cr>
-nnoremap <C-p><C-b> :Buffers <cr>
-nnoremap <C-p><C-g> :GFiles <cr>
-nnoremap <C-p><C-o> :FZF 
+nnoremap <C-x><C-f> :FZF -m<cr>
+nnoremap <C-x><C-b> :Buffers <cr>
+nnoremap <C-x><C-g> :GFiles <cr>
+nnoremap <C-x><C-o> :FZF 
+
+nnoremap <C-x><C-s> :w<cr>
 
 "Terminal settings
 tnoremap <Esc> <C-\><C-n>

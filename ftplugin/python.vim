@@ -7,9 +7,9 @@ command! PyPop call python#debugging#PyPopulateQuickfixWindow(escape(expand('%:p
 
 nnoremap <silent> <leader>ee :call python#debugging#PyOpenDebugger()<cr>
 
-nnoremap <silent> [e :python#debugging#PyPreviousError()<cr>
+nnoremap <silent> [e :call python#debugging#PyPreviousError()<cr>
 
-nnoremap <silent> ]e :python#debugging#PyNextError()<cr>
+nnoremap <silent> ]e :call python#debugging#PyNextError()<cr>
 
 set colorcolumn=80
 
