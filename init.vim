@@ -43,7 +43,7 @@ filetype plugin indent on
 
 "Variables and options
 
-let mapleader=","
+let mapleader=" "
 
 set number relativenumber
 set completeopt-=preview
@@ -60,6 +60,16 @@ noremap <M-h> 0
 noremap <M-l> $
 noremap <M-k> H
 noremap <M-j> L
+
+" emacs like keybindings
+nnoremap <C-x><C-s> :w<cr>
+nnoremap <M-x> :
+nnoremap <M-q> gq0
+inoremap <M-q> <esc>gq0i
+nnoremap <C-g> <C-c>
+cnoremap <C-g> <C-c>
+"
+
 noremap <C-j> gj
 noremap <C-k> gk
 nnoremap <silent> ]q :cnext<cr>
@@ -79,7 +89,6 @@ nnoremap <C-x><C-b> :Buffers <cr>
 nnoremap <C-x><C-g> :GFiles <cr>
 nnoremap <C-x><C-o> :FZF 
 
-nnoremap <C-x><C-s> :w<cr>
 
 "Terminal settings
 tnoremap <Esc> <C-\><C-n>
@@ -119,6 +128,8 @@ let localsettingsfile = expand('~/.config/nvim/scripts/localsettings.vim')
 if filereadable(localsettingsfile)
 	execute " source " . localsettingsfile
 endif
+
+nnoremap <silent> <leader>ea :execute(':vsplit' . localsettingsfile)<cr>
 
 function! DeleteSwap()
 	call system('rm ' . $HOME . '/.local/share/nvim/swap/*' . expand('%:t') . '*')

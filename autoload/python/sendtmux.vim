@@ -24,3 +24,13 @@ function! python#sendtmux#SendTmux(type)
 	endif
 endfunction
 
+
+function! python#sendtmux#SendWholeFile()
+	let l:filename = expand('%:p')
+	let l:python_command = 'exec(open("' . l:filename . '").read())'
+	execute ':silent !tmux send-keys -t ' . string(g:python_tmux_window) . ' i C-c ' . string(l:python_command) . ' Enter'
+endfunction
+
+
+
+
