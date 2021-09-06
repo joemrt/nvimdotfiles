@@ -37,6 +37,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': 'python'}
 Plug 'ap/vim-css-color', {'for' : 'python'}
 Plug 'tpope/vim-vinegar'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'mfussenegger/nvim-dap'
 call plug#end()
 
 filetype plugin indent on
@@ -66,8 +67,8 @@ nnoremap <C-x><C-s> :w<cr>
 nnoremap <M-x> :
 nnoremap <M-q> gq0
 inoremap <M-q> <esc>gq0i
-nnoremap <C-g> <C-c>
-cnoremap <C-g> <C-c>
+" nnoremap <C-g> <C-c>
+" cnoremap <C-g> <C-c>
 "
 
 noremap <C-j> gj
