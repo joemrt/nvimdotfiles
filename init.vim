@@ -78,6 +78,7 @@ nnoremap <silent> [q :cprev<cr>
 nnoremap <silent> <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <silent> <leader>er :vsplit ~/.config/nvim/README.md<cr>
 nnoremap <silent> <leader>ep :vsplit ~/.config/nvim/ftplugin/python.vim<cr>
+nnoremap <silent> <leader>elp :vsplit ~/.config/nvim/ftplugin/python.lua<cr>
 nnoremap <silent> <leader>et :vsplit ~/.config/nvim/ftplugin/tex.vim<cr>
 nnoremap <silent> <leader>l :set number! relativenumber!<cr>
 nnoremap <silent> <leader><space> :noh<cr>
@@ -102,6 +103,10 @@ augroup END
 "Added to avoid confusion between Windows(fzf) and writing
 command! W write
 command! Wq :wq
+command! Wqall :wqall
+
+" switch working directory to the one of the current file 
+command! Gohere execute('cd ' . expand('%:h'))
 
 let g:goyo_width=80
 let g:goyo_height=90

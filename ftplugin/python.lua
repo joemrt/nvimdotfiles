@@ -37,4 +37,7 @@ dap.configurations.python = {
 vim.api.nvim_set_keymap('n', '<Leader>dd', ':lua require"dap".continue()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>dc', ':lua require"dap".close()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>db', ':lua require"dap".toggle_breakpoint()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>dx', ':lua require"dap".repl.open()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>dx', ':lua require"dap".repl.toggle()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>dn', ':lua require"dap".down()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>dp', ':lua require"dap".up()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>dj', ':lua require"dap".step_over()<CR>', { noremap = true, silent = true })
