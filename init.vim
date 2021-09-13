@@ -38,6 +38,7 @@ Plug 'ap/vim-css-color', {'for' : 'python'}
 Plug 'tpope/vim-vinegar'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'mfussenegger/nvim-dap'
+Plug 'dhruvasagar/vim-table-mode'
 call plug#end()
 
 filetype plugin indent on
@@ -54,6 +55,8 @@ let g:airline_theme='violet'
 let g:matchup_override_vimtex=1 
 let g:matchup_matchparen_deferred=1
 
+"" Disables table-mode keybindings
+let g:table_mode_map_prefix = '<F13>'
 
 "Mappings
 inoremap jk <Esc>l
