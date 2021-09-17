@@ -45,7 +45,7 @@ filetype plugin indent on
 
 "Variables and options
 
-let mapleader=" "
+let mapleader=","
 
 set number relativenumber
 set completeopt-=preview
@@ -60,10 +60,10 @@ let g:table_mode_map_prefix = '<F13>'
 
 "Mappings
 inoremap jk <Esc>l
-noremap <M-h> 0
-noremap <M-l> $
-noremap <M-k> H
-noremap <M-j> L
+" noremap <M-j> L
+" noremap <M-k> H
+" noremap <M-h> 0
+" noremap <M-l> $ 
 
 " emacs like keybindings
 nnoremap <C-x><C-s> :w<cr>
