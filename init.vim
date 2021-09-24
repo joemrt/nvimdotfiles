@@ -83,6 +83,7 @@ nnoremap <silent> <leader>er :vsplit ~/.config/nvim/README.md<cr>
 nnoremap <silent> <leader>ep :vsplit ~/.config/nvim/ftplugin/python.vim<cr>
 nnoremap <silent> <leader>elp :vsplit ~/.config/nvim/ftplugin/python.lua<cr>
 nnoremap <silent> <leader>et :vsplit ~/.config/nvim/ftplugin/tex.vim<cr>
+nnoremap <silent> <leader>elt :vsplit ~/.config/nvim/ftplugin/tex.lua<cr>
 nnoremap <silent> <leader>l :set number! relativenumber!<cr>
 nnoremap <silent> <leader><space> :noh<cr>
 nnoremap <silent> <leader>, ,
@@ -129,6 +130,7 @@ augroup END
 augroup loadscripts
 	autocmd!
 	autocmd BufWritePost ~/.config/nvim/*/*.vim :source %
+	autocmd BufWritePost ~/.config/nvim/*/*.lua :source %
 augroup END
 
 " put localsettings

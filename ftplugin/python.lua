@@ -1,3 +1,9 @@
+--[[
+Lua configuration for python files.
+Will be loaded after python.vim
+--]]
+
+
 -- DAP settings 
 function find_python_interpreters()
 	local python_interpreters = {}
