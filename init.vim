@@ -32,6 +32,8 @@ Plug 'tpope/vim-fugitive'
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'flazz/vim-colorschemes'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'tomasr/molokai'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': 'python'}
 Plug 'ap/vim-css-color', {'for' : 'python'}
@@ -67,6 +69,7 @@ inoremap jk <Esc>l
 
 " emacs like keybindings
 nnoremap <C-x><C-s> :w<cr>
+inoremap <silent> <C-x><C-s> <Esc>:w<cr>a
 nnoremap <M-x> :
 nnoremap <M-q> gq0
 inoremap <M-q> <esc>gq0i
@@ -89,6 +92,8 @@ nnoremap <silent> <leader><space> :noh<cr>
 nnoremap <silent> <leader>, ,
 noremap <silent> ]b :call searchpair('\[','','\]')<cr>
 noremap <silent> [b :call searchpair('\[','','\]','b')<cr>
+" open first line of current file in a horizontal split
+nnoremap <silent> <leader>eh  :split \| normal! gg<cr>
 
 nnoremap <C-x><C-f> :FZF -m<cr>
 nnoremap <C-x><C-b> :Buffers <cr>
@@ -111,6 +116,9 @@ command! Wqall :wqall
 
 " switch working directory to the one of the current file 
 command! Gohere execute('cd ' . expand('%:h'))
+" window local
+command! Lohere execute('lcd ' . expand('%:h'))
+command! Dohere execute('lcd ' . expand('%'))
 
 let g:goyo_width=80
 let g:goyo_height=90
@@ -144,6 +152,10 @@ nnoremap <silent> <leader>ea :execute(':vsplit' . localsettingsfile)<cr>
 
 function! DeleteSwap()
 	call system('rm ' . $HOME . '/.local/share/nvim/swap/*' . expand('%:t') . '*')
+endfunction
+
+function! DeleteView()
+	call system('rm ' . $HOME . '/.local/share/nvim/view/*'. expand('%:t') . '*')
 endfunction
 
 let g:tex_flavor = "latex"

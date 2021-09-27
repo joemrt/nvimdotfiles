@@ -12,7 +12,7 @@ This configures neovim for writing Python and LaTeX code based on various plugin
 
 + Install pynvim and rope in python environment
 
-+ Install `coc-python` by running `CocInstall coc-python` in command mode.
++ Install `coc-pyright` by running `CocInstall coc-pyright` in command mode.
 
 + Ensure tmux is installed
 
