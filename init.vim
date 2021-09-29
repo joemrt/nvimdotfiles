@@ -1,22 +1,7 @@
-"init.vim file for neovim 
-""""""""""""""""""""""""""
-""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""
+"Configuration file for Neovim"
+"""""""""""""""""""""""""""""""
 
-""""""""""""""""""""""""""""""""""""""""""""""""
-"To install neovim as AppImage: 
-" 0.) cd ~/local/ 
-" 1.) curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
-" 2.) chmod u+x nvim.appimage
-" 3.) ln -s nvim.appimage ~/bin/nvim 
-
-"To install vim-plug (for Plugins)
-" 1.) Install(in the venv) pynvim, e.g. conda install -c conda-forge pynvim
-" 2.) curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-" https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-" Run :PlugInstall after placing the corresponding Plug below
-
-"Place this file under ~/.config/nvim/init.vim
-""""""""""""""""""""""""""""""""""""""""""""""""
 
 silent! call plug#begin('~/.local/share/nvim/plugged')
 Plug 'jiangmiao/auto-pairs'
@@ -60,6 +45,10 @@ let g:matchup_matchparen_deferred=1
 "" Disables table-mode keybindings
 let g:table_mode_map_prefix = '<F13>'
 
+" general lua package
+lua general = require('general')
+
+
 "Mappings
 inoremap jk <Esc>l
 " noremap <M-j> L
@@ -87,6 +76,7 @@ nnoremap <silent> <leader>ep :vsplit ~/.config/nvim/ftplugin/python.vim<cr>
 nnoremap <silent> <leader>elp :vsplit ~/.config/nvim/ftplugin/python.lua<cr>
 nnoremap <silent> <leader>et :vsplit ~/.config/nvim/ftplugin/tex.vim<cr>
 nnoremap <silent> <leader>elt :vsplit ~/.config/nvim/ftplugin/tex.lua<cr>
+nnoremap <silent> <leader>elv :vsplit ~/.config/nvim/lua/general/init.lua<cr>
 nnoremap <silent> <leader>l :set number! relativenumber!<cr>
 nnoremap <silent> <leader><space> :noh<cr>
 nnoremap <silent> <leader>, ,
@@ -115,10 +105,9 @@ command! Wq :wq
 command! Wqall :wqall
 
 " switch working directory to the one of the current file 
-command! Gohere execute('cd ' . expand('%:h'))
+command! Gohere lua general.update_cwd('cd')
 " window local
-command! Lohere execute('lcd ' . expand('%:h'))
-command! Dohere execute('lcd ' . expand('%'))
+command! Lohere lua general.update_cwd('lcd')
 
 let g:goyo_width=80
 let g:goyo_height=90
