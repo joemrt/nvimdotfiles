@@ -1,21 +1,22 @@
+# Configuration files for Neovim
 
-# Configuration file for neovim
+My personal configuration of Neovim for usage within Linux or WSL, with a particular focus on writing Python and LaTeX, based on various plugins by other people and self-written VimL and Lua.
+As this is designed for private usage, don't expect anything in this repository to work out of the box or to be sufficiently documented. 
 
-This configures neovim in Linux for writing Python and LaTeX code based on
-various plugins and self-written vimscript and lua.
+## Getting started
 
-## General
-
-+ Place this file under ~/.config/nvim/init.vim
-+ Install vim-plug
++ Install Neovim or download the latest binaries
++ Clone this repository into `~/.config/nvim/`
++ Install [vim-plug](https://github.com/junegunn/vim-plug)
 + `PlugInstall` all plugins
++ For Python and LaTeX procede as indicated below
 
-## Configuration files
+## Overview of configuration files
 
 All names are relative to `~/.config/nvim`
 
 +  `init.vim` Configuration in VimL
-+  `lua/general/init.lua` Configuration in Lua. Will be required in `init.vim`.
++  `lua/general/init.lua` Configuration in Lua. Will be required within `init.vim`.
 +  `ftplugin/` own filetype dependant "plugins" (in VimL and Lua).
 +  `autoload/` VimL "plugins" for autoloading to reduce overhead.
 + `snippets/` Contains LaTeX snippets to be included via keymappings, cf. `ftplugin/tex.vim`.
@@ -25,16 +26,14 @@ All names are relative to `~/.config/nvim`
 ## Usage for python (based on coc-vim)
 
 + Download the node binaries in a folder
-
 + link the node, npm and npx executables to a folder in the PATH
-
-+ Install `coc-pyright` by running `CocInstall coc-pyright` in command mode.
-
++ Open an arbitrary python file and install `coc-pyright` by running `CocInstall coc-pyright` in command mode.
 + Ensure tmux is installed
-
 + Ensure ipython is configured with vim keybindings
++ Open Neovim within a venv where `python` starts Python 3.
 
 ## Usage for LaTeX
-
+TODO: make more explicit
 + Install LaTeX packages
-+ Install mupdf, compiled with the right options (TODO: include)
++ Install/compile mupdf and xdotools with the right options
++ Only compile when an X server is running.

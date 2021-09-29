@@ -39,9 +39,27 @@ dap.configurations.python = {
   },
 }
 
+function open_debugger()
+	debugged_file = vim.fn.expand('%:p')
+	-- start/continue debugging
+	require("dap").continue()
+end
+
+function close_debugger()
+	-- close debugger
+	require('dap').close()
+	-- return
+	if debugged_file ~= nil then
+		vim.api.nvim_command('edit ' ..
+		    debugged_file)
+	end
+	debugged_file = nil
+	print('Debugging closed')
+end
+
 -- set mappings
-vim.api.nvim_set_keymap('n', '<Leader>dd', ':lua require"dap".continue()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>dc', ':lua require"dap".close()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>dd', ':lua open_debugger()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>dc', ':lua close_debugger()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>db', ':lua require"dap".toggle_breakpoint()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>dx', ':lua require"dap".repl.toggle()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>dn', ':lua require"dap".down()<CR>', { noremap = true, silent = true })
