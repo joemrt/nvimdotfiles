@@ -144,7 +144,7 @@ function! DeleteSwap()
 endfunction
 
 function! DeleteView()
-	call system('rm ' . $HOME . '/.local/share/nvim/view/*'. expand('%:t') . '*')
+	call system('rm ' . $HOME . '/.local/share/nvim/view/*')
 endfunction
 
 let g:tex_flavor = "latex"
