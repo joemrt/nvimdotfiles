@@ -19,10 +19,8 @@ nnoremap <silent> gää :execute('silent! .w !tmux send-keys -t ' . string(g:pyt
 vnoremap <silent> gä :<C-u>call python#sendtmux#SendTmux(visualmode())<cr>
 nnoremap <silent> gÄ :<C-u>call python#sendtmux#SendWholeFile()<cr>
 
-" load boa module in lua
-lua package.loaded.boa = nil
-lua boa=require('boa')
-command! PyReloadModules lua boa.SendReloadToTmux()
+" Send reload string to ipython in tmux
+command! PyReloadModules lua SendReloadToTmux()
 
 
 augroup checkforjk

@@ -4,7 +4,11 @@ Will be loaded after python.vim
 --]]
 
 
+
+
+
 -- DAP settings 
+-- ----------
 function find_python_interpreters()
 	local python_interpreters = {}
 	-- get interpreter via which
@@ -65,3 +69,45 @@ vim.api.nvim_set_keymap('n', '<Leader>dx', ':lua require"dap".repl.toggle()<CR>'
 vim.api.nvim_set_keymap('n', '<Leader>dn', ':lua require"dap".down()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>dp', ':lua require"dap".up()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>dj', ':lua require"dap".step_over()<CR>', { noremap = true, silent = true })
+
+-- Reloading modules
+-- -----------------
+
+-- for tmux integration
+local tmux = require('tmux_interaction')
+
+
+-- first HeadSize lines will be considered
+local HeadSize=100
+
+-- scan head and return a string with reload statements
+function CreateReloadString()
+	-- Scanes HeadSize of py Module	
+	-- and returns string of imported modules
+	local HeadString = vim.api.nvim_buf_get_lines(
+		0,0,HeadSize,false)
+	local ImportString = {}	
+	table.insert(ImportString, "from importlib import reload")
+	for key, value in pairs(HeadString) do
+		if value:match("^import ") or value:match("^from ") then
+			import_value = vim.fn.substitute(value,
+			"^\\(import\\|from\\)\\s\\+\\(\\S*\\).*$","import \\2; reload(\\2)","")
+			table.insert(ImportString, import_value)
+		end
+	end
+	ImportString = table.concat(ImportString, '\n')
+	-- local piped_string = mio.pipe(HeadString, 
+	--		"sed -nE 's/^(import|from)" ..
+	--		"[[:space:]]+([[:alnum:]]+).*$/" ..
+	--		"\\2/p'")
+	-- return piped_string
+	return ImportString
+end
+
+-- combine with tmux integration
+function SendReloadToTmux()
+	-- Send string with reloading of modules
+	-- to g:python_tmux_window
+	tmux.SendStringToTmux(CreateReloadString())
+end
+
