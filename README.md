@@ -20,17 +20,21 @@ All names are relative to `~/.config/nvim`
 +  `ftplugin/` own filetype dependant "plugins" (in VimL and Lua).
 +  `autoload/` VimL "plugins" for autoloading to reduce overhead.
 + `snippets/` Contains LaTeX snippets to be included via keymappings, cf. `ftplugin/tex.vim`.
-+ `scripts/` A (rather random) collection of scripts in bash and option files (e.g. for coc-vim) in VimL. This folder can also contain a file `scripts/localsettings.vim` that should not be included in the git repository and can be used for local configuration.
++ `scripts/` A (rather random) collection of scripts in bash and option files (e.g. for coc-nvim) in VimL. This folder can also contain a file `scripts/localsettings.vim` that should not be included in the git repository and can be used for local configuration.
 
 
-## Usage for python (based on coc-vim)
+## Usage for python (based on coc-nvim)
 
 + Download the node binaries in a folder
 + link the node, npm and npx executables to a folder in the PATH
 + Open an arbitrary python file and install `coc-pyright` by running `CocInstall coc-pyright` in command mode.
 + Ensure tmux is installed
 + Ensure ipython is configured with vim keybindings
-+ Open Neovim within a venv where `python` starts Python 3.
++ Open Neovim within a venv where `python` starts Python 3
+
+More precisely, `coc-pyright` will look into `~/.config/nvim/coc-settings.json`, where it is told that '~/.config/nvim/scripts/python_interpreter.sh' is the "python interpreter" to be used (which in turn will launch the binary `python` of the shell environment.)
+ **Note**: A python interpreter within the working directory will take precedence over this interpreter and might thus lead to unexpected behavior. 
+To see which python interpreter is used by `coc-pyright` look at the result of `CocCommand workspace.showOutput` (select `Pyright`).
 
 ## Usage for LaTeX
 TODO: make more explicit

@@ -82,7 +82,7 @@ local HeadSize=100
 
 -- scan head and return a string with reload statements
 function CreateReloadString()
-	-- Scanes HeadSize of py Module	
+	-- Scans HeadSize of py Module	
 	-- and returns string of imported modules
 	local HeadString = vim.api.nvim_buf_get_lines(
 		0,0,HeadSize,false)
@@ -96,11 +96,6 @@ function CreateReloadString()
 		end
 	end
 	ImportString = table.concat(ImportString, '\n')
-	-- local piped_string = mio.pipe(HeadString, 
-	--		"sed -nE 's/^(import|from)" ..
-	--		"[[:space:]]+([[:alnum:]]+).*$/" ..
-	--		"\\2/p'")
-	-- return piped_string
 	return ImportString
 end
 
