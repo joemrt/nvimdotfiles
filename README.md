@@ -5,10 +5,10 @@ As this is designed for private usage, don't expect anything in this repository 
 
 ## Getting started
 
-+ Install Neovim or download the latest binaries
++ Install Neovim or download the [latest binaries](https://github.com/neovim/neovim/releases/)
 + Clone this repository into `~/.config/nvim/`
 + Install [vim-plug](https://github.com/junegunn/vim-plug)
-+ `PlugInstall` all plugins
++ `:PlugInstall` all plugins
 + For Python and LaTeX procede as indicated below
 
 ## Overview of configuration files
@@ -23,18 +23,33 @@ All names are relative to `~/.config/nvim`
 + `scripts/` A (rather random) collection of scripts in bash and option files (e.g. for coc-nvim) in VimL. This folder can also contain a file `scripts/localsettings.vim` that should not be included in the git repository and can be used for local configuration.
 
 
-## Usage for python (based on coc-nvim)
+## Usage for python (based on [coc-nvim](https://github.com/neoclide/coc.nvim) and [tmux](https://wiki.ubuntuusers.de/tmux/))
 
-+ Download the node binaries in a folder
-+ link the node, npm and npx executables to a folder in the PATH
-+ Open an arbitrary python file and install `coc-pyright` by running `CocInstall coc-pyright` in command mode.
-+ Ensure tmux is installed
-+ Ensure ipython is configured with vim keybindings
+### Setting up coc-nvim
+
++ Download the node binaries from [nodejs](https://nodejs.org/en/download/) in a folder
++ link the node, npm and npx executables to a folder in the $PATH
++ Open an arbitrary python file and install [coc-pyright](https://github.com/fannheyward/coc-pyright) by running `:CocInstall coc-pyright` in command mode.
 + Open Neovim within a venv where `python` starts Python 3
 
-More precisely, `coc-pyright` will look into `~/.config/nvim/coc-settings.json`, where it is told that '~/.config/nvim/scripts/python_interpreter.sh' is the "python interpreter" to be used (which in turn will launch the binary `python` of the shell environment.)
- **Note**: A python interpreter within the working directory will take precedence over this interpreter and might thus lead to unexpected behavior. 
-To see which python interpreter is used by `coc-pyright` look at the result of `CocCommand workspace.showOutput` (select `Pyright`).
+More precisely, `coc-pyright` will look into `~/.config/nvim/coc-settings.json`, where it is told that `~/.config/nvim/scripts/python_interpreter.sh` is the "python interpreter" to be used (which in turn will launch the binary `python` of the shell environment.)
+
+**Note**: A python interpreter within the working directory will take precedence over this interpreter and might thus lead to unexpected behavior. 
+To see which python interpreter is used by `coc-pyright` look at the result of `:CocCommand workspace.showOutput` (select `Pyright`).
+
+### Usage with tmux
+
++ Ensure tmux is installed
++ Ensure ipython is installed in the used venv and configured with vim keybindings, that is add `c.TerminalInteractiveShell.editing_mode = 'vi'` to `~/.ipython/profile_default/ipython_config.py`.
+
+Make a vertical split within tmux. Open `ipython --no-autoindent` in the lower pane. Parts of the code or the whole (saved) file can be send to this pane via
+
++ `gä` Takes a motion and sends the code up to the end position of the motion to the lower pane.  For instance `gäG` will send all code from the cursor position to the last line of the file to the lower pane. 
++ `gää` Sends the current line to the lower pane
++ `gÄ` Sends an execution command for the entire file to the lower pane. This will execute the saved file.
+
+The pane to which code will be send can be changed via `g:python_tmux_window` (defaults to 1, which is the lower pane in a vertical split). 
+
 
 ## Usage for LaTeX
 TODO: make more explicit
