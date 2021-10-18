@@ -26,6 +26,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'mfussenegger/nvim-dap'
 Plug 'dhruvasagar/vim-table-mode'
+Plug 'neovim/nvim-lspconfig'
 call plug#end()
 
 filetype plugin indent on
@@ -136,8 +137,14 @@ let localsettingsfile = expand('~/.config/nvim/scripts/localsettings.vim')
 if filereadable(localsettingsfile)
 	execute " source " . localsettingsfile
 endif
+let localluafile = expand('~/.config/nvim/scripts/locallua.lua')
+if filereadable(localluafile)
+	execute " source " . localluafile
+endif
 
 nnoremap <silent> <leader>ea :execute(':vsplit' . localsettingsfile)<cr>
+nnoremap <silent> <leader>ela :execute(':vsplit' . localluafile)<cr>
+
 
 function! DeleteSwap()
 	call system('rm ' . $HOME . '/.local/share/nvim/swap/*' . expand('%:t') . '*')
