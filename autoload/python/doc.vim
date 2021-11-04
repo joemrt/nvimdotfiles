@@ -14,6 +14,8 @@ function! python#doc#GetDocString()
 	" loop to resolve braces
 	let while_counter = 0
 	while match(value_of_braces, '[(){}\[\]]') !=# -1 && while_counter <# s:maximial_trial_of_brace_resolval
+		let value_of_braces = substitute(value_of_braces, "'[^']*'","",'g')
+		let value_of_braces = substitute(value_of_braces, '"[^"]*"',"",'g')
 		let value_of_braces = system('sed -E "s/[({[][^][(){}]*[]})]//g"', value_of_braces)
 		let while_counter = while_counter +1
 	endwhile
