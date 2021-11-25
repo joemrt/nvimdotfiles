@@ -34,6 +34,9 @@ nnoremap <silent> <leader>ö :call python#doc#GetDocString()<cr>
 " load coc.vim settings
 source ~/.config/nvim/scripts/partial_coc.vim
 
+" needed to keep cursor in block shape when searching references
+let g:coc_disable_transparent_cursor = 1
+
 "Save and load folds
 augroup pythonfolds
 	autocmd!

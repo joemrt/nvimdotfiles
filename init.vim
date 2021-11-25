@@ -51,7 +51,7 @@ lua general = require('general')
 
 
 "Mappings
-inoremap jk <Esc>l
+inoremap jk <Esc>
 " noremap <M-j> L
 " noremap <M-k> H
 " noremap <M-h> 0
@@ -85,6 +85,7 @@ noremap <silent> ]b :call searchpair('\[','','\]')<cr>
 noremap <silent> [b :call searchpair('\[','','\]','b')<cr>
 " open first line of current file in a horizontal split
 nnoremap <silent> <leader>eh  :split \| normal! gg<cr>
+nnoremap <silent> <leader>gf :vsplit \| normal! gf<cr>
 
 nnoremap <C-x><C-f> :FZF -m<cr>
 nnoremap <C-x><C-b> :Buffers <cr>
@@ -98,7 +99,6 @@ augroup TerminalSettings
 	autocmd!
 	autocmd TermOpen * setlocal nonumber norelativenumber
 augroup END
-
 
 "Added to avoid confusion between Windows(fzf) and writing
 command! W write
