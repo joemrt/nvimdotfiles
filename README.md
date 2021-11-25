@@ -23,7 +23,7 @@ All names are relative to `~/.config/nvim`
 + `scripts/` A (rather random) collection of scripts in bash and option files (e.g. for coc-nvim) in VimL. This folder can also contain a file `scripts/localsettings.vim` that should not be included in the git repository and can be used for local configuration.
 
 
-## Usage for python (based on [coc-nvim](https://github.com/neoclide/coc.nvim) and [tmux](https://wiki.ubuntuusers.de/tmux/))
+## Usage for python (based on [coc-nvim](https://github.com/neoclide/coc.nvim), [tmux](https://wiki.ubuntuusers.de/tmux/) and [nvim-dap](https://github.com/mfussenegger/nvim-dap))
 
 ### Setting up coc-nvim
 
@@ -50,6 +50,18 @@ Make a vertical split within tmux. Open `ipython --no-autoindent` in the lower p
 
 The pane to which code will be send can be changed via `g:python_tmux_window` (defaults to 1, which is the lower pane in a vertical split). 
 
+### Usage of dap debugger
+
+In the same framework that is used for your python interpreter (e.g. Anaconda) create a virtual environment `debugpy` and install `pip` and `debugpy`. 
+
+The debugger can then be used as follows
+
++`<leader>dd`: Start debugging
++`<leader>dx`: Open debugging REPL
++`<leader>dc`: Close debugging, go back to starting point
++`<leader>dn`: Go down the stack trace
++`<leader>dp`: Go up the stack trace
++`<leader>dj`: Step forward
 
 ## Usage for LaTeX
 TODO: make more explicit
