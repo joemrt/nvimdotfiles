@@ -10,6 +10,7 @@ As this is designed for private usage, don't expect anything in this repository 
 + Install [vim-plug](https://github.com/junegunn/vim-plug)
 + `:PlugInstall` all plugins
 + For Python and LaTeX procede as indicated below
++ To enable fuzzy finding, install (fzf)[https://github.com/junegunn/fzf] in `~/.fzf`
 
 ## Overview of configuration files
 

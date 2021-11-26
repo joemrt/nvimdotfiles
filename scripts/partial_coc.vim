@@ -45,7 +45,7 @@ nmap <silent> gr <Plug>(coc-references)
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 " custom for preview in window
-nnoremap <silent> gK :call CocAction('doHover','preview')<CR>
+nnoremap <silent> <leader>K :call CocAction('doHover','preview')<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
