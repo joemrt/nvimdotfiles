@@ -25,8 +25,7 @@ Plug 'ap/vim-css-color', {'for' : 'python'}
 Plug 'tpope/vim-vinegar'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'mfussenegger/nvim-dap'
-" Plug 'dhruvasagar/vim-table-mode'
-" Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-treesitter/nvim-treesitter'
 call plug#end()
 
 filetype plugin indent on

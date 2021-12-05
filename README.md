@@ -37,6 +37,12 @@ More precisely, `coc-pyright` will look into `~/.config/nvim/coc-settings.json`,
 **Note**: A python interpreter within the working directory will take precedence over this interpreter and might thus lead to unexpected behavior. 
 To see which python interpreter is used by `coc-pyright` look at the result of `:CocCommand workspace.showOutput` (select `Pyright`).
 
+To update all extensions use
+
+```
+:CocUpdate
+```
+
 ### Usage with tmux
 
 + Ensure tmux is installed
@@ -68,3 +74,30 @@ TODO: make more explicit
 + Install LaTeX packages
 + Install/compile mupdf and xdotools with the right options
 + Only compile when an X server is running.
+
+## improved syntax highlighting via the [treesitter plugin](https://github.com/nvim-treesitter/nvim-treesitter)
+
+Install the language parsers of your choice, e.g. Python via
+
+```
+:TSInstall python
+```
+
+Add the following to your `localluafile`:
+
+```
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    disable = {"bash"},  -- bash highlighting unhelpful
+    additional_vim_regex_highlighting = false,
+  },
+}
+```
+To update all installed parsers use
+
+```
+:TSUpdate
+```
+
+
