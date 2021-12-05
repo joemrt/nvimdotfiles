@@ -20,7 +20,7 @@ All names are relative to `~/.config/nvim`
 +  `ftplugin/` own filetype dependant "plugins" (in VimL and Lua).
 +  `autoload/` VimL "plugins" for autoloading to reduce overhead.
 + `snippets/` Contains LaTeX snippets to be included via keymappings, cf. `ftplugin/tex.vim`.
-+ `scripts/` A (rather random) collection of scripts in bash and option files (e.g. for coc-nvim) in VimL. This folder can also contain a file `scripts/localsettings.vim` that should not be included in the git repository and can be used for local configuration.
++ `scripts/` A (rather random) collection of scripts in bash and option files (e.g. for coc-nvim) in VimL. This folder can also contains the files `scripts/localsettings.vim` and `scripts/locallua.lua` that should not be included in the git repository and can be used for local configuration.
 
 
 ## Usage for python (based on [coc-nvim](https://github.com/neoclide/coc.nvim), [tmux](https://wiki.ubuntuusers.de/tmux/) and [nvim-dap](https://github.com/mfussenegger/nvim-dap))
@@ -75,7 +75,7 @@ TODO: make more explicit
 + Install/compile mupdf and xdotools with the right options
 + Only compile when an X server is running.
 
-## improved syntax highlighting via the [treesitter plugin](https://github.com/nvim-treesitter/nvim-treesitter)
+## Improved syntax highlighting via the [treesitter plugin](https://github.com/nvim-treesitter/nvim-treesitter)
 
 Install the language parsers of your choice, e.g. Python via
 
@@ -83,7 +83,7 @@ Install the language parsers of your choice, e.g. Python via
 :TSInstall python
 ```
 
-Add the following to your `localluafile`:
+Add the following to your `scripts/locallua.lua` (open via `<leader>ela`):
 
 ```
 require'nvim-treesitter.configs'.setup {
