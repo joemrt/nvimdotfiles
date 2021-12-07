@@ -86,8 +86,8 @@ inoremap <leader>cite \cite{}<++><esc>F}i
 """"""""
 
 inoremap $$ $$<++><esc>F$i
-inoremap <leader>align* \begin{align*}<cr><cr>\end{align*}<esc>kI
-inoremap <leader>align \begin{align}<cr><cr>\end{align}<esc>kI
+inoremap <leader>align* \begin{align*}<cr><cr><esc>I\end{align*}<esc>kI
+inoremap <leader>align \begin{align}<cr><cr><esc>I\end{align}<esc>kI
 "{ 
 inoremap <leader>frac \frac{}{<++>}<++><esc>2F}i
 inoremap <leader>< \langle\rangle<++><esc>2Fea
@@ -99,6 +99,7 @@ inoremap <leader>figure \begin{figure}[t]<cr>
 			\\includegraphics[width=\textwidth]{}<cr>
 			\\caption{<++>}<cr>
 			\\label{<++>}<cr>
+			\<esc>I
 			\\end{figure}<cr>
 			\<++><esc>4k$F{a
 "} (for syntax)
@@ -107,6 +108,7 @@ inoremap <leader>wrapfigure \begin{wrapfigure}{l}{0.5\textwidth}<cr>
 			\\includegraphics[width=0.48\textwidth]{}<cr>
 			\\caption{<++>}<cr>
 			\\label{<++>}<cr>
+			\<esc>I
 			\\end{wrapfigure}<cr>
 			\<++><esc>4k$F{a
 "} (for syntax)
@@ -128,6 +130,7 @@ inoremap <leader>subfigure \begin{figure}[t]
 			\\end{subfigure}<cr>
 			\\caption{<++>}<cr>
 			\\label{<++>}<cr>
+			\<esc>I
 			\\end{figure}<cr><++><esc>14k$F{a
 "} (for syntax)
 
@@ -136,6 +139,7 @@ inoremap <leader>subfigure \begin{figure}[t]
 inoremap <leader>minipage \begin{minipage}{0.49\textwidth}<cr>
 			  \<cr>
 			  \% e.g. \captionof{figure}{caption text...}<cr>
+			  \<esc>I
 			  \\end{minipage}<cr><++><esc>3k0S
 
 
@@ -144,6 +148,7 @@ inoremap <leader>minipage \begin{minipage}{0.49\textwidth}<cr>
 
 inoremap <leader>itemize \begin{itemize}<cr>
 			\\item <cr>
+			\<esc>I
 			\\end{itemize}<cr><++><esc>2k$a
 
 		
