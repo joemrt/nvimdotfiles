@@ -70,11 +70,27 @@ The debugger can then be used as follows
 + `<leader>dp`: Go up the stack trace
 + `<leader>dj`: Step forward
 
-## Usage for LaTeX
-TODO: make more explicit
-+ Install LaTeX packages
-+ Install/compile mupdf and xdotools with the right options
-+ Only compile when an X server is running.
+## Usage for LaTeX (based on [vimtex](https://github.com/lervag/vimtex) and [mupdf](https://mupdf.com/)) 
+
+### Setting up vimtex
++ Install LaTeX packages, e.g in Ubuntu
+```
+sudo apt install texlive texlive-lang-german texlive-latex-extra 
+```
++ Install `latexmk`, e.g in Ubuntu
+```
+sudo apt install latexmk
+```
++ Ensure an X server is running.
++ Install xdotool, e.g. in Ubuntu
+```
+sudo apt install xdotool
+```
++ Install mupdf, e.g. in Ubuntu
+```
+sudo apt install mupdf
+```
+
 
 ## Improved syntax highlighting via the [treesitter plugin](https://github.com/nvim-treesitter/nvim-treesitter)
 
