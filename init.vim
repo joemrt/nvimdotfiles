@@ -89,6 +89,7 @@ nnoremap <silent> <leader>gf :vsplit \| normal! gf<cr>
 nnoremap <C-x><C-f> :FZF -m<cr>
 nnoremap <C-x><C-b> :Buffers <cr>
 nnoremap <C-x><C-g> :GFiles <cr>
+nnoremap <C-x>/ :BLines <cr> 
 nnoremap <C-x><C-o> :FZF 
 
 
