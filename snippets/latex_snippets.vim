@@ -1,5 +1,5 @@
 "marking
-inoremap <leader>mk \mk{}<++><esc>F{a
+inoremap <leader>jm \jm{}<++><esc>F{a
 
 "sections and similar
 """"""""""""""""""""""
