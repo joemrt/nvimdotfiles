@@ -63,6 +63,7 @@ end
 
 -- set mappings
 vim.api.nvim_set_keymap('n', '<Leader>dd', ':lua open_debugger()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>df', ':lua require"dap".continue()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>dc', ':lua close_debugger()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>db', ':lua require"dap".toggle_breakpoint()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>dx', ':lua require"dap".repl.toggle()<CR>', { noremap = true, silent = true })
