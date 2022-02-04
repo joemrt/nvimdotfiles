@@ -120,6 +120,7 @@ inoremap <leader>subfigure \begin{figure}[t]
 			\\includegraphics[width=\textwidth]{}<cr>
 			\\caption{<++>}<cr>
 			\\label{<++>}<cr>
+			\<esc>I<tab>
 			\\end{subfigure}%<cr>
 			\~<cr>
 			\\begin{subfigure}[t]{0.49\textwidth}<cr>
@@ -127,6 +128,7 @@ inoremap <leader>subfigure \begin{figure}[t]
 			\\includegraphics[width=\textwidth]{<++>}<cr>
 			\\caption{<++>}<cr>
 			\\label{<++>}<cr>
+			\<esc>I<tab>
 			\\end{subfigure}<cr>
 			\\caption{<++>}<cr>
 			\\label{<++>}<cr>
