@@ -86,11 +86,21 @@ sudo apt install latexmk
 ```
 sudo apt install xdotool
 ```
-+ Install mupdf, e.g. in Ubuntu
++ Install okular, e.g. in Ubuntu
 ```
-sudo apt install mupdf
+sudo apt install okular
 ```
 
+### Setting up inverse search
+
+
+Install via `pip3` [neovim-remote](https://github.com/mhinz/neovim-remote).
+
+In Okular: Change in "Settings > Configure Okular > Editor" the editor to "Custom Text Editor" and include the following line as a command to execute when Shift + Left Mouse is clicked
+
+```
+nvr --remote-silent %f -c %l
+```
 
 ## Improved syntax highlighting via the [treesitter plugin](https://github.com/nvim-treesitter/nvim-treesitter)
 
