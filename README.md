@@ -94,13 +94,14 @@ sudo apt install okular
 ### Setting up inverse search
 
 
-Install via `pip3` [neovim-remote](https://github.com/mhinz/neovim-remote).
 
-In Okular: Change in "Settings > Configure Okular > Editor" the editor to "Custom Text Editor" and include the following line as a command to execute when Shift + Left Mouse is clicked
+In Okular: Change in "Settings > Configure Okular > Editor" the editor to "Custom Text Editor" and include the following line as a command to execute when Shift + Left Mouse is clicked in "Browse" Mode:
 
 ```
-nvr --remote-silent %f -c %l
+nvim --headless -c "VimtexInverseSearch %l '%f'"
 ```
+
+**Note**: vimtex has to autoload whenever neovim opens (and not only for tex-files) in order for this to work.
 
 ## Improved syntax highlighting via the [treesitter plugin](https://github.com/nvim-treesitter/nvim-treesitter)
 

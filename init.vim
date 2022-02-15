@@ -8,7 +8,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/goyo.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'lervag/vimtex', {'for': 'tex'}
+Plug 'lervag/vimtex'
 Plug 'plasticboy/vim-markdown', {'for': 'md'}
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
