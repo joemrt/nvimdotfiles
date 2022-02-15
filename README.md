@@ -91,6 +91,12 @@ sudo apt install xdotool
 sudo apt install okular
 ```
 
+To enable flawless forward search in WSL install
+
+```
+sudo apt-get install mesa-utils dbus-x11
+```
+
 ### Setting up inverse search
 
 
