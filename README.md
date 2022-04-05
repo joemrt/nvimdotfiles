@@ -64,11 +64,18 @@ In the same framework that is used for your python interpreter (e.g. Anaconda) c
 The debugger can then be used as follows
 
 + `<leader>dd`: Start/continue debugging
-+ `<leader>dx`: Toggle REPL
++ `<leader>ds`: Toggle REPL
 + `<leader>dc`: Close debugging and go back to the last file where `<leader>dd` was pressed
++ `<leader>dx`: Close debugging, do nothing else
 + `<leader>dn`: Go down the stack trace
 + `<leader>dp`: Go up the stack trace
 + `<leader>dj`: Step forward
++ `<leader>db`: toggle breakpoint
++ `<leader>di`: set conditional breakpoint (asks for condition)
++ `<leader>dB`: delete all breakpoints
++ `<leader>dL`: list all breakpoints in quickfix window
+
+
 
 ## Usage for LaTeX (based on [vimtex](https://github.com/lervag/vimtex) and [mupdf](https://mupdf.com/)) 
 
