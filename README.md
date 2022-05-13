@@ -64,6 +64,7 @@ In the same framework that is used for your python interpreter (e.g. Anaconda) c
 The debugger can then be used as follows
 
 + `<leader>dd`: Start/continue debugging
++ `<leader>df`: Continue debugging
 + `<leader>ds`: Toggle REPL
 + `<leader>dc`: Close debugging and go back to the last file where `<leader>dd` was pressed
 + `<leader>dx`: Close debugging, do nothing else
