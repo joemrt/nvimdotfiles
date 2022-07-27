@@ -26,6 +26,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'mfussenegger/nvim-dap'
 Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'rakr/vim-one'
 call plug#end()
 
 filetype plugin indent on
