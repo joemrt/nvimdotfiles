@@ -1,4 +1,5 @@
 {
 	"python.pythonPath": "~/.config/nvim/scripts/python_interpreter.sh",
+	"suggest.noselect": true,
 	"python.linting.flake8Enabled": false
 }

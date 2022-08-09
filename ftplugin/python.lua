@@ -51,7 +51,7 @@ end
 
 function close_debugger()
 	-- close debugger
-	require('dap').close()
+	require('dap').terminate()
 	-- return
 	if debugged_file ~= nil then
 		vim.api.nvim_command('edit ' ..
@@ -65,7 +65,7 @@ end
 vim.api.nvim_set_keymap('n', '<Leader>dd', ':lua open_debugger()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>df', ':lua require"dap".continue()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>dc', ':lua close_debugger()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>dx', ':lua require"dap".close()<CR>:lua print("Debugging closed") <cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>dx', ':lua require"dap".terminate()<CR>:lua print("Debugging closed") <cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>db', ':lua require"dap".toggle_breakpoint()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>di', ':lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>dB', ':lua require"dap".clear_breakpoints()<CR>', { noremap = true, silent = true })
