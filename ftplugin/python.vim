@@ -31,6 +31,10 @@ augroup END
 " print document string
 nnoremap <silent> <leader>ö :call python#doc#GetDocString()<cr>
 
+" insert f-string
+inoremap f' f''<Esc>i
+
+
 " load coc.vim settings
 source ~/.config/nvim/scripts/partial_coc.vim
 
